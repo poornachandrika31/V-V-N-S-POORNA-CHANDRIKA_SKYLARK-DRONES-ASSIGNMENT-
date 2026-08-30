@@ -22,7 +22,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://v-v-n-s-poorna-chandrika-skylark-drones-assignment-5qnzkmops.vercel.app"
+        "https://v-v-n-s-poorna-chandrika-skylark-drones-assignment-5qnkzmops.vercel.app/"
     ],
     allow_credentials=True,
     allow_methods=["*"],
