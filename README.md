@@ -1,7 +1,3 @@
-Absolutely. For this project, I'd make the README feel like a **real production/business-intelligence product README**, not a college assignment.
-
-Replace your current root `README.md` with this:
-
 ````markdown
 # Skylark BI Agent
 
@@ -22,7 +18,7 @@ Skylark retrieves the relevant business data through its analytics layer and pro
 
 ---
 
-## ✨ Key Highlights
+✨ Key Highlights
 
 | Capability | Description |
 |---|---|
@@ -38,7 +34,7 @@ Skylark retrieves the relevant business data through its analytics layer and pro
 
 ---
 
-# 🏗️ System Architecture
+🏗️ System Architecture
 
 ```text
                          ┌──────────────────────┐
@@ -708,16 +704,3 @@ Built as part of the **Skylark Drones assignment** with a focus on business inte
 
 ````
 
-### One small thing I'd change after pasting it
-
-Don't add fake screenshots or fake performance numbers just to make the README look impressive. Once you've got the actual UI finalized, we can add **2–3 real screenshots/GIFs** under `Application Screens`. That will make the repo look substantially more professional.
-
-Then commit it:
-
-```powershell
-git add README.md
-git commit -m "Add professional project documentation"
-git push
-````
-
-And your GitHub repo will be in a **very presentable submission state**.
