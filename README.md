@@ -319,6 +319,25 @@ The dashboard provides both aggregate field-gap counts and specific completeness
 ```
 
 ---
+## 📸 Dashboard Screenshots
+
+### Executive Overview
+![Executive Overview](screenshots/overview.png)
+
+### AI Business Assistant
+![AI Assistant](screenshots/ai-assistant.png)
+
+### Pipeline Intelligence
+![Pipeline Intelligence](screenshots/pipeline.png)
+
+### Financial Position
+![Financial Position](screenshots/finance.png)
+
+### Risk Intelligence
+![Risk Intelligence](screenshots/risk.png)
+
+### Data Quality
+![Data Quality](screenshots/data-quality.png)
 
 # 🛠️ Technology Stack
 
