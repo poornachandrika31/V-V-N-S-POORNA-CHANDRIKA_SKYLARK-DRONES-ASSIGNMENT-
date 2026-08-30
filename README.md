@@ -1,171 +1,87 @@
-````markdown
 # Skylark BI Agent
 
 > **AI-powered Business Intelligence platform for turning operational data into actionable executive insights.**
 
-Skylark BI Agent is a full-stack Business Intelligence application that combines **live business data, analytics, risk intelligence, financial insights, data-quality monitoring, and a grounded AI assistant** into a single executive dashboard.
+Skylark BI Agent is a full-stack Business Intelligence application that combines **business analytics, financial intelligence, deal-risk detection, data-quality monitoring, and a grounded AI assistant** into one executive dashboard.
 
-Instead of manually navigating spreadsheets and dashboards, users can ask natural-language questions such as:
-
-- *What is our current pipeline?*
-- *Which sectors have the largest pipeline?*
-- *How much money is currently receivable?*
-- *What are our biggest deal risks?*
-- *Why is a particular deal considered risky?*
-- *What is our billing and collection rate?*
-
-Skylark retrieves the relevant business data through its analytics layer and provides concise, decision-oriented answers.
+Instead of manually navigating spreadsheets and dashboards, users can ask natural-language questions about the business and receive answers grounded in the application's analytics layer.
 
 ---
 
-✨ Key Highlights
+## ✨ Key Highlights
 
 | Capability | Description |
 |---|---|
 | 📊 **Executive Dashboard** | High-level view of pipeline, weighted pipeline, billing, collections and receivables |
 | 📈 **Pipeline Intelligence** | Analyze open deals and pipeline distribution across sectors |
-| 💰 **Financial Intelligence** | Track order value, billing, collections, receivables and remaining billing |
-| ⚠️ **Risk Intelligence** | Identify potentially risky deals using probability and deal metadata |
-| 🧹 **Data Quality Monitoring** | Surface missing fields and data-completeness issues |
-| 🤖 **Grounded AI Assistant** | Ask business questions using natural language |
-| 🔗 **Monday.com Integration** | Connect business data from Monday.com |
-| 🔄 **Live Data Refresh** | Refresh analytics directly from the backend |
-| 🖥️ **Modern Web Interface** | Responsive React-based executive dashboard |
+| 💰 **Financial Intelligence** | Track order value, billing, collections and receivables |
+| ⚠️ **Risk Intelligence** | Identify deals requiring management attention |
+| 🧹 **Data Quality** | Detect missing fields that may affect business analysis |
+| 🤖 **AI Assistant** | Ask business questions using natural language |
+| 🔗 **Monday.com Integration** | Retrieve operational business data |
+| 🔄 **Live Refresh** | Refresh dashboard analytics from the backend |
+| 🖥️ **Modern UI** | Responsive React-based executive dashboard |
 
 ---
 
-🏗️ System Architecture
-
-```text
-                         ┌──────────────────────┐
-                         │      User / Exec     │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-                         ┌──────────────────────┐
-                         │    React Frontend    │
-                         │                      │
-                         │  Executive Dashboard │
-                         │  Pipeline Intelligence│
-                         │  Financial Position  │
-                         │  Risk Intelligence   │
-                         │  Data Quality        │
-                         │  AI Assistant        │
-                         └──────────┬───────────┘
-                                    │ REST API
-                                    ▼
-                         ┌──────────────────────┐
-                         │     FastAPI API      │
-                         │                      │
-                         │ /analytics/dashboard │
-                         │ /chat                │
-                         └──────────┬───────────┘
-                                    │
-                    ┌───────────────┼───────────────┐
-                    │               │               │
-                    ▼               ▼               ▼
-             ┌────────────┐  ┌────────────┐  ┌────────────┐
-             │ Analytics  │  │ AI Agent   │  │  Monday    │
-             │   Layer    │  │   Layer    │  │  Client    │
-             └────────────┘  └────────────┘  └────────────┘
-                    │               │               │
-                    ▼               ▼               ▼
-             Pipeline / Finance   Planner /      Business
-             Risk / Operations    Tools /        Data
-             Data Quality         Schemas
-````
-
----
-
-# 🎯 Problem
+## 🎯 Problem
 
 Business teams often have valuable operational data spread across multiple sources.
 
 Although the data exists, answering basic management questions can still require:
 
-* manually inspecting records
-* calculating financial metrics
-* filtering deals
-* identifying risky opportunities
-* checking data completeness
-* navigating multiple systems
+- Manually inspecting records
+- Calculating financial metrics
+- Filtering deals
+- Identifying risky opportunities
+- Checking data completeness
+- Navigating multiple systems
 
 This creates unnecessary friction between **raw business data and management decisions**.
 
-Skylark addresses this by providing a unified intelligence layer that converts operational data into:
+---
 
-**Data → Analytics → Insights → Decisions**
+## 💡 Solution
+
+Skylark provides a unified intelligence layer that transforms operational data into actionable business insights.
+
+```text
+Business Data
+      ↓
+Data Normalization
+      ↓
+Analytics Layer
+      ↓
+Business Intelligence
+      ↓
+AI Agent
+      ↓
+Executive Decision
+```
+
+The platform allows users to monitor business performance, understand financial position, identify deal risks, investigate data-quality issues and interact with the data conversationally.
 
 ---
 
-# 💡 Solution
+## 🤖 AI-Powered Business Assistant
 
-Skylark provides a single interface where executives and business users can:
+The Skylark AI Assistant provides a conversational interface over the business analytics layer.
 
-### 1. Monitor business performance
+Users can ask questions such as:
 
-The executive dashboard surfaces:
+> What is our current pipeline?
 
-* Open pipeline
-* Weighted pipeline
-* Total deals
-* Billing progress
-* Collection progress
-* Receivables
-* Sector concentration
+> Which sectors have the largest pipeline?
 
-### 2. Understand financial position
+> How much money is currently receivable?
 
-Users can quickly inspect:
+> What are our biggest deal risks?
 
-* Total order value
-* Billed amount
-* Collected amount
-* Receivable amount
-* Amount yet to be billed
-* Billing rate
-* Collection rate
+> Why is a particular deal considered risky?
 
-### 3. Identify deal risks
+> What data quality problems should I know about?
 
-The Risk Intelligence module highlights deals with signals such as:
-
-* Low closure probability
-* Missing close dates
-* Early sales stages
-* Unknown probability
-* Other risk indicators returned by the analytics layer
-
-### 4. Monitor data quality
-
-Skylark identifies missing business fields that may affect analytical reliability.
-
-Examples include:
-
-* Missing deal values
-* Missing probabilities
-* Missing sectors
-* Missing work-order collection information
-
-### 5. Ask questions naturally
-
-Instead of navigating through multiple screens, users can ask:
-
-> "How much money is currently receivable?"
-
-or:
-
-> "Which deal is the biggest risk?"
-
-The AI assistant retrieves the relevant information from the business intelligence layer and presents the result conversationally.
-
----
-
-# 🤖 AI Assistant
-
-The Skylark AI Assistant is designed around **grounded business intelligence** rather than unrestricted conversational generation.
-
-The assistant can use the application's analytics tools to retrieve relevant information before generating an answer.
+The assistant retrieves relevant business information through the application's analytics and tool layer before generating its response.
 
 ### Example
 
@@ -175,47 +91,88 @@ The assistant can use the application's analytics tools to retrieve relevant inf
 
 **Skylark**
 
-> Sakura — ₹30.59 Cr
-> Probability: Low
-> Sector: Tender
-> Risks: Low closure probability, close date is missing.
+```text
+Deal: Sakura
+Value: ₹30.59 Cr
+Probability: Low
+Sector: Tender
 
-This approach helps keep responses tied to the underlying business data.
+Risk signals:
+• Low closure probability
+• Close date is missing
+```
+
+This keeps AI responses connected to the application's underlying business data rather than relying only on generic model knowledge.
 
 ---
 
-# 📊 Analytics Modules
+# 📊 Core Intelligence Modules
 
-## Pipeline Intelligence
+## 1. Executive Overview
 
-Provides visibility into:
+The main dashboard provides an executive-level snapshot of the business.
 
-* Total deals
-* Open deals
-* Open pipeline
-* Weighted pipeline
-* Pipeline by sector
-* Sector concentration
+Key indicators include:
+
+- Open Pipeline
+- Weighted Pipeline
+- Total Deals
+- Billing Rate
+- Collection Rate
+- Receivables
+- Sector Concentration
+- Priority Deal Risks
+- Data Quality Signals
+
+---
+
+## 2. Pipeline Intelligence
+
+The Pipeline module provides visibility into the current sales pipeline.
+
+It includes:
+
+- Total deals
+- Open deals
+- Open pipeline
+- Weighted pipeline
+- Pipeline by sector
+- Sector concentration
 
 The weighted pipeline provides a probability-adjusted view of potential business value.
 
+### Pipeline Analysis
+
+```text
+Total Pipeline
+      │
+      ├── Sector A
+      ├── Sector B
+      ├── Sector C
+      └── ...
+      
+Weighted Pipeline
+      │
+      └── Probability-adjusted opportunity value
+```
+
 ---
 
-## Financial Intelligence
+## 3. Financial Intelligence
 
-Tracks the movement from order value to cash collection:
+The Finance module provides visibility into the movement from work-order value to cash collection.
 
 ```text
 Total Order Value
-       │
-       ▼
-     Billed
-       │
-       ▼
-   Collected
+        │
+        ▼
+      Billed
+        │
+        ▼
+    Collected
 ```
 
-While also highlighting:
+The dashboard also tracks:
 
 ```text
 Receivable
@@ -224,116 +181,179 @@ To Be Billed
 
 Key metrics include:
 
-* Billing Rate
-* Collection Rate
-* Receivables
-* Billed Value
-* Collected Value
-* Remaining Billing Value
+- Total Order Value
+- Billed Amount
+- Collected Amount
+- Receivable
+- Amount To Be Billed
+- Billing Rate
+- Collection Rate
 
 ---
 
-## Risk Intelligence
+## 4. Risk Intelligence
 
-The risk engine surfaces deals that require management attention.
+The Risk Intelligence module identifies deals that may require management attention.
 
 Risk signals can include:
 
+- Low closure probability
+- Missing close dates
+- Early sales stages
+- Unknown probability
+- Other risk indicators generated by the analytics layer
+
+The system prioritizes risk entries so that high-value opportunities can be reviewed first.
+
+### Risk Detection Concept
+
 ```text
 Low Probability
-      +
+       +
 Missing Close Date
-      +
+       +
 Early Sales Stage
-      ↓
-Potentially Risky Deal
+       ↓
+Potential Risk
+       ↓
+Management Attention
 ```
 
-The dashboard ranks risk entries so that high-value opportunities can be reviewed first.
+Each risk entry can include the deal name, value, sector, probability and detected risk reasons.
 
 ---
 
-## Data Quality
+## 5. Data Quality Intelligence
 
 Reliable analytics depends on reliable source data.
 
-The Data Quality module surfaces missing fields and provides visibility into potential gaps affecting:
+The Data Quality module identifies missing business information that can affect analytical accuracy.
 
-* Pipeline analysis
-* Weighted forecasting
-* Sector analysis
-* Cash-flow visibility
-* Work-order analytics
+Examples include:
+
+- Missing deal values
+- Missing probabilities
+- Missing sectors
+- Missing work-order collection information
+
+The dashboard provides both aggregate field-gap counts and specific completeness signals.
 
 ---
 
-# 🖥️ Application Screens
+# 🏗️ System Architecture
 
-### Executive Overview
+```text
+                         ┌─────────────────────┐
+                         │     Business User   │
+                         │     / Executive     │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │    React Frontend   │
+                         │                     │
+                         │ Executive Overview  │
+                         │ Pipeline            │
+                         │ Finance             │
+                         │ Risk Intelligence   │
+                         │ Data Quality        │
+                         │ AI Assistant        │
+                         └──────────┬──────────┘
+                                    │
+                                  REST
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │     FastAPI API     │
+                         │                     │
+                         │ /analytics/dashboard│
+                         │ /chat               │
+                         └──────────┬──────────┘
+                                    │
+              ┌─────────────────────┼─────────────────────┐
+              │                     │                     │
+              ▼                     ▼                     ▼
+      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+      │  Analytics   │      │  AI Agent    │      │  Monday.com  │
+      │    Layer     │      │    Layer     │      │    Client    │
+      └──────┬───────┘      └──────────────┘      └──────┬───────┘
+             │                                            │
+             ▼                                            ▼
+      ┌──────────────┐                            Business Data
+      │ Pipeline     │
+      │ Finance      │
+      │ Risk         │
+      │ Operations   │
+      │ Data Quality │
+      └──────────────┘
+```
 
-The main dashboard provides an executive-level snapshot of the business.
+---
 
-It combines:
+# 🔄 Data Flow
 
-* KPI cards
-* Pipeline visualization
-* Financial position
-* Risk intelligence
-* Data-quality signals
-* AI assistant
-
-### Pipeline Intelligence
-
-Visualizes the distribution of open pipeline across business sectors.
-
-### Financial Position
-
-Provides a detailed view of billing, collections and outstanding receivables.
-
-### Risk Intelligence
-
-Provides a prioritized deal-risk register with supporting risk reasons.
-
-### Data Quality
-
-Highlights missing fields that may reduce analytical confidence.
+```text
+                    Monday.com / Business Data
+                              │
+                              ▼
+                     Data Normalization
+                              │
+                              ▼
+                    ┌──────────────────┐
+                    │ Analytics Layer  │
+                    └────────┬─────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              ▼              ▼              ▼
+          Pipeline        Finance          Risk
+              │              │              │
+              └──────────────┼──────────────┘
+                             ▼
+                       Data Quality
+                             │
+                             ▼
+                         AI Agent
+                             │
+                             ▼
+                     Executive Dashboard
+```
 
 ---
 
 # 🛠️ Technology Stack
 
-## Frontend
+### Frontend
 
-* **React**
-* **Vite**
-* **JavaScript**
-* **Recharts**
-* **Lucide React**
-* CSS
+- React
+- Vite
+- JavaScript
+- Recharts
+- Lucide React
+- CSS
 
-## Backend
+### Backend
 
-* **Python**
-* **FastAPI**
-* REST APIs
-* Modular analytics services
+- Python
+- FastAPI
+- REST APIs
+- Modular analytics services
 
-## AI / Agent Layer
+### AI / Agent Layer
 
-* AI agent architecture
-* Tool-based business intelligence retrieval
-* Structured schemas
-* Prompt-driven reasoning
-* Grounded responses
+- AI agent architecture
+- Tool-based business intelligence retrieval
+- Structured schemas
+- Prompt-driven responses
+- Grounded business-data access
 
-## Data & Integration
+### Integration & Data
 
-* Monday.com integration
-* Business analytics layer
-* Pipeline analytics
-* Financial analytics
-* Risk analytics
-* Data-quality analytics
+- Monday.com API integration
+- Data normalization
+- Pipeline analytics
+- Financial analytics
+- Risk analytics
+- Data-quality analytics
 
 ---
 
@@ -388,7 +408,8 @@ skylark-bi-agent/
 │
 ├── docs/
 ├── .gitignore
-└── README.md
+├── README.md
+└── ...
 ```
 
 ---
@@ -397,16 +418,16 @@ skylark-bi-agent/
 
 ## Prerequisites
 
-Make sure you have installed:
+Make sure the following are installed:
 
-* Python 3.10+
-* Node.js 18+
-* npm
-* Git
+- Python 3.10+
+- Node.js 18+
+- npm
+- Git
 
 ---
 
-# 1. Clone the Repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/poornachandrika31/V-V-N-S-POORNA-CHANDRIKA_SKYLARK-DRONES-ASSIGNMENT-.git
@@ -416,7 +437,7 @@ cd V-V-N-S-POORNA-CHANDRIKA_SKYLARK-DRONES-ASSIGNMENT-
 
 ---
 
-# 2. Backend Setup
+## 2. Backend Setup
 
 Navigate to the backend:
 
@@ -428,7 +449,7 @@ Create a virtual environment:
 
 ### Windows
 
-```bash
+```powershell
 python -m venv venv
 venv\Scripts\activate
 ```
@@ -448,17 +469,17 @@ pip install -r requirements.txt
 
 ---
 
-# 3. Configure Environment Variables
+## 3. Configure Environment Variables
 
-Create a `.env` file inside `backend/`.
+Create a `.env` file inside the `backend` directory.
 
-Add the required configuration values for the business-data integration and AI services.
+Add the required credentials and configuration values for the business-data integration and AI services.
 
-> **Never commit `.env` or API keys to GitHub.**
+**Do not commit API keys, credentials or `.env` files to GitHub.**
 
 ---
 
-# 4. Start the Backend
+## 4. Start the Backend
 
 From the `backend` directory:
 
@@ -466,7 +487,7 @@ From the `backend` directory:
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-The API will be available at:
+The backend will run at:
 
 ```text
 http://127.0.0.1:8000
@@ -480,7 +501,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# 5. Start the Frontend
+## 5. Start the Frontend
 
 Open another terminal:
 
@@ -500,15 +521,13 @@ Start the development server:
 npm run dev
 ```
 
-Vite will provide the local frontend URL in the terminal.
+Vite will display the local frontend URL in the terminal.
 
 ---
 
 # 🔌 API Overview
 
-The frontend communicates with the FastAPI backend through REST endpoints.
-
-### Dashboard
+## Dashboard
 
 ```http
 GET /analytics/dashboard
@@ -516,7 +535,7 @@ GET /analytics/dashboard
 
 Returns the consolidated analytics required by the executive dashboard.
 
-The response contains information such as:
+The response includes information such as:
 
 ```text
 pipeline
@@ -526,7 +545,9 @@ risks
 data_quality
 ```
 
-### AI Chat
+---
+
+## AI Chat
 
 ```http
 POST /chat
@@ -540,13 +561,11 @@ Example request:
 }
 ```
 
-The backend processes the request through the AI/analytics layer and returns the grounded answer.
+The backend processes the request through the AI and analytics layers and returns a grounded business response.
 
 ---
 
-# 📌 Example Business Questions
-
-Skylark can answer questions such as:
+# 💬 Example Questions
 
 ### Pipeline
 
@@ -598,11 +617,11 @@ What data quality problems should I know about?
 
 ---
 
-# 🔐 Security Considerations
+# 🔐 Security
 
-Sensitive configuration should be stored through environment variables.
+Sensitive configuration should be stored using environment variables.
 
-The repository intentionally excludes:
+The repository excludes common local and sensitive files such as:
 
 ```text
 .env
@@ -618,70 +637,59 @@ API keys, authentication credentials and private integration tokens should never
 
 # 📈 Design Philosophy
 
-Skylark is designed around three principles:
+Skylark is built around three principles.
 
 ### 01 — Clarity
 
-Executives should understand the business situation within seconds.
+Executives should understand the business situation quickly without navigating through multiple systems.
 
 ### 02 — Actionability
 
-The dashboard should highlight what requires attention, not simply display raw numbers.
+The platform should highlight important signals and potential issues rather than simply displaying raw data.
 
 ### 03 — Trust
 
-AI responses should be grounded in actual business data and analytics rather than unsupported assumptions.
-
----
-
-# 🔄 Data Flow
-
-```text
-Business Data
-     │
-     ▼
-Monday.com / Data Sources
-     │
-     ▼
-Normalization
-     │
-     ▼
-Analytics Services
- ┌───┼────┬──────┐
- ▼   ▼    ▼      ▼
-Pipeline Finance Risk  Data Quality
- └───┼────┴──────┘
-     ▼
-AI Agent / API
-     │
-     ▼
-React Dashboard
-     │
-     ▼
-Executive Decision
-```
+AI responses should remain grounded in the application's business data and analytics layer.
 
 ---
 
 # 🌟 Why Skylark?
 
-Traditional BI dashboards answer:
+Traditional BI dashboards primarily answer:
 
-> **"What happened?"**
+> **What happened?**
 
-Skylark aims to go one step further:
+Skylark aims to move one step further:
 
-> **"What is happening, why does it matter, and what should I look at next?"**
+> **What is happening, why does it matter, and what should I look at next?**
 
-By combining structured analytics with a grounded conversational interface, Skylark creates a more accessible way for business users to interact with operational data.
+By combining structured analytics with a conversational AI interface, Skylark provides a more accessible way for business users to interact with operational data.
 
 ---
 
-# 📚 Project Context
+# 📸 Application
+
+The application provides dedicated views for:
+
+- Executive Overview
+- Pipeline Intelligence
+- Financial Position
+- Risk Intelligence
+- Data Quality
+- AI Business Assistant
+
+Screenshots can be added here as the interface evolves.
+
+---
+
+# 📚 Project Information
 
 **Project:** Skylark BI Agent
+
 **Organization:** Skylark Drones
+
 **Application Type:** AI-powered Business Intelligence Platform
+
 **Architecture:** Full-stack React + FastAPI application
 
 ---
@@ -696,11 +704,8 @@ Computer Science & Artificial Intelligence
 
 ## ⭐ Acknowledgements
 
-Built as part of the **Skylark Drones assignment** with a focus on business intelligence, analytics, AI-assisted decision support and full-stack application development.
+Built as part of the **Skylark Drones assignment**, focusing on business intelligence, analytics, AI-assisted decision support and full-stack application development.
 
 ---
 
 > **Skylark BI Agent — From business data to better decisions.**
-
-````
-
