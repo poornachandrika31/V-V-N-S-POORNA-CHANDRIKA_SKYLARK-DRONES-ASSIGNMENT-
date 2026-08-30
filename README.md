@@ -2,11 +2,13 @@
 
 > **AI-powered Business Intelligence platform for turning operational data into actionable executive insights.**
 
+**🔗 Live Demo:** https://v-v-n-s-poorna-chandrika-skylark-drones-assignment-5qnkzmops.vercel.app/
+
+**📄 Decision Log:** [View Decision Log](decision-log.pdf)
+
 Skylark BI Agent is a full-stack Business Intelligence application that combines **business analytics, financial intelligence, deal-risk detection, data-quality monitoring, and a grounded AI assistant** into one executive dashboard.
 
 Instead of manually navigating spreadsheets and dashboards, users can ask natural-language questions about the business and receive answers grounded in the application's analytics layer.
-
----
 
 ## ✨ Key Highlights
 
@@ -410,60 +412,71 @@ The AI assistant can investigate deal risks and explain why specific opportuniti
 
 # 📁 Project Structure
 
+# 📁 Project Structure
+
 ```text
 skylark-bi-agent/
 │
 ├── backend/
 │   ├── app/
 │   │   ├── agent/
-│   │   │   ├── agent.py
-│   │   │   ├── planner.py
-│   │   │   ├── prompts.py
-│   │   │   ├── schemas.py
-│   │   │   └── tools.py
-│   │   │
 │   │   ├── analytics/
-│   │   │   ├── finance.py
-│   │   │   ├── operations.py
-│   │   │   ├── pipeline.py
-│   │   │   ├── risk.py
-│   │   │   └── service.py
-│   │   │
 │   │   ├── data/
-│   │   │   ├── data_quality.py
-│   │   │   └── normalizer.py
-│   │   │
 │   │   ├── monday/
-│   │   │   └── client.py
-│   │   │
 │   │   ├── config.py
 │   │   └── main.py
 │   │
-│   └── requirements.txt
+│   ├── requirements.txt
+│   └── .env
+│
+├── data/
 │
 ├── frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   │   ├── DataQuality.jsx
-│   │   │   ├── Finance.jsx
-│   │   │   ├── Overview.jsx
-│   │   │   ├── Pipeline.jsx
-│   │   │   └── Risk.jsx
-│   │   │
-│   │   ├── App.jsx
-│   │   ├── App.css
-│   │   └── index.css
-│   │
-│   ├── package.json
-│   └── vite.config.js
+│   └── ...
 │
-├── docs/
+├── public/
+│
+├── src/
+│
+├── screenshots/
+│   ├── ai-assistant.png
+│   ├── ai-assistant-2.png
+│   ├── ai-assistant-3.png
+│   ├── data-quality.png
+│   ├── finance.png
+│   ├── overview.png
+│   ├── pipeline.png
+│   └── risk.png
+│
 ├── .gitignore
+├── decision-log.pdf
+├── index.html
+├── package.json
+├── package-lock.json
 ├── README.md
-└── ...
+└── vite.config.js
 ```
 
 ---
+
+# 🌐 Hosted Prototype
+
+The application is deployed as a production-ready web prototype and can be tested without local setup.
+
+**Frontend / Application:**
+
+https://v-v-n-s-poorna-chandrika-skylark-drones-assignment-5qnkzmops.vercel.app/
+
+The hosted prototype provides access to:
+
+- Executive Overview
+- Pipeline Intelligence
+- Financial Intelligence
+- Risk Intelligence
+- Data Quality
+- Conversational AI Assistant
+
+The frontend communicates with the deployed FastAPI backend through REST APIs.
 
 # 🚀 Getting Started
 
@@ -718,20 +731,22 @@ By combining structured analytics with a conversational AI interface, Skylark pr
 
 ---
 
-# 📸 Application
+# ✅ Assignment Requirements
 
-The application provides dedicated views for:
-
-- Executive Overview
-- Pipeline Intelligence
-- Financial Position
-- Risk Intelligence
-- Data Quality
-- AI Business Assistant
-
-Screenshots can be added here as the interface evolves.
+| Requirement | Implementation |
+|---|---|
+| Hosted Prototype | Deployed React application accessible through Vercel |
+| Conversational Interface | AI-powered `/chat` endpoint with business-data grounding |
+| Monday.com Integration | FastAPI-based Monday.com API client |
+| Business Analytics | Pipeline, finance, operations and risk analytics |
+| Data Quality | Missing-field and data-completeness detection |
+| Error Handling | API exception handling and graceful failure responses |
+| Decision Log | Included in `docs/decision-log.pdf` |
+| Source Code | Complete frontend and backend source included |
+| README | Architecture, setup, API and Monday.com configuration documented |
 
 ---
+
 
 # 📚 Project Information
 
@@ -742,6 +757,12 @@ Screenshots can be added here as the interface evolves.
 **Application Type:** AI-powered Business Intelligence Platform
 
 **Architecture:** Full-stack React + FastAPI application
+
+# 📋 Decision Log
+
+The project includes a concise decision log documenting the key assumptions, architectural and technical trade-offs, interpretation of "leadership updates", and potential improvements with additional development time.
+
+📄 **[Read the Decision Log](docs/decision-log.pdf)**
 
 ---
 
