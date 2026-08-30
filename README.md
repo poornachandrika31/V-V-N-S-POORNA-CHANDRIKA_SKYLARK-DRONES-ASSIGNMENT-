@@ -65,25 +65,79 @@ The platform allows users to monitor business performance, understand financial 
 
 ---
 
-## 🤖 AI-Powered Business Assistant
+# 🤖 AI-Powered Business Assistant
 
 The Skylark AI Assistant provides a conversational interface over the business analytics layer.
 
-Users can ask questions such as:
+The assistant combines **deterministic business tools** with an **LLM-powered reasoning layer** to answer natural-language questions while keeping critical business metrics grounded in the underlying data.
 
-> What is our current pipeline?
+### LLM Architecture
 
-> Which sectors have the largest pipeline?
+The application uses:
 
-> How much money is currently receivable?
+- **Qwen2.5 1.5B** as the language model
+- **Ollama** for local model serving and inference
+- **FastAPI** as the backend API layer
+- Python-based BI tools for retrieving verified business metrics
+- Prompt-based intent classification and management summarization
 
-> What are our biggest deal risks?
-
-> Why is a particular deal considered risky?
-
-> What data quality problems should I know about?
-
+```text
+User Question
+      │
+      ▼
+Intent Detection
+      │
+      ├── Pipeline ───────► Pipeline Tool
+      ├── Sector ─────────► Sector Tool
+      ├── Finance ────────► Finance Tool
+      ├── Receivables ────► Receivables Tool
+      ├── Risk ───────────► Risk Tool
+      ├── Data Quality ───► Data Quality Tool
+      │
+      └── Management ─────► Multiple BI Tools
+                                │
+                                ▼
+                         Verified Fact Sheet
+                                │
+                                ▼
+                         Qwen2.5 1.5B
+                                │
+                                ▼
+                       Executive Briefing
 The assistant retrieves relevant business information through the application's analytics and tool layer before generating its response.
+
+Grounded AI Responses
+
+Critical business metrics are calculated by the Python analytics layer before being presented to the LLM.
+
+This prevents the model from independently calculating or inventing business figures.
+
+For management-level questions, the system collects verified information from:
+
+Pipeline analytics
+Sector analytics
+Financial analytics
+Receivables
+Deal-risk detection
+Data-quality analysis
+
+These values are assembled into a verified business fact sheet, which is then provided to the LLM to generate a concise executive briefing.
+
+Example Questions
+
+What is our current pipeline?
+
+Which sectors have the largest pipeline?
+
+How much money is currently receivable?
+
+What are our biggest deal risks?
+
+Why is a particular deal considered risky?
+
+What data quality problems should I know about?
+
+What should management focus on?
 
 ### Example
 
@@ -393,11 +447,15 @@ The AI assistant can investigate deal risks and explain why specific opportuniti
 
 ### AI / Agent Layer
 
-- AI agent architecture
-- Tool-based business intelligence retrieval
-- Structured schemas
-- Prompt-driven responses
-- Grounded business-data access
+- **Qwen2.5 1.5B** Large Language Model
+- **Ollama** for local LLM inference
+- Intent classification for natural-language business queries
+- Tool-based Business Intelligence retrieval
+- Deterministic analytics for critical business metrics
+- LLM-powered management briefings
+- Structured JSON responses for intent classification
+- Prompt-driven response generation
+- Grounded responses based on verified business data
 
 ### Integration & Data
 
