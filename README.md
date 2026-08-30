@@ -412,8 +412,6 @@ The AI assistant can investigate deal risks and explain why specific opportuniti
 
 # 📁 Project Structure
 
-# 📁 Project Structure
-
 ```text
 skylark-bi-agent/
 │
