@@ -319,25 +319,57 @@ The dashboard provides both aggregate field-gap counts and specific completeness
 ```
 
 ---
-## 📸 Dashboard Screenshots
+# 📸 Application Screenshots
 
-### Executive Overview
+Skylark provides dedicated views for executive monitoring, business analytics and conversational decision support.
+
+### Executive Dashboard
+
 ![Executive Overview](screenshots/overview.png)
 
-### AI Business Assistant
-![AI Assistant](screenshots/ai-assistant.png)
+The executive overview provides a consolidated view of pipeline, weighted pipeline, billing, collections, receivables, sector concentration, deal risks and data-quality signals.
 
 ### Pipeline Intelligence
+
 ![Pipeline Intelligence](screenshots/pipeline.png)
 
-### Financial Position
-![Financial Position](screenshots/finance.png)
+The Pipeline Intelligence view provides visibility into open deals, total pipeline, weighted pipeline and pipeline distribution across sectors.
+
+### Financial Intelligence
+
+![Financial Intelligence](screenshots/finance.png)
+
+The Finance view tracks total order value, billed amount, collected amount, receivables, amount to be billed and billing/collection progress.
 
 ### Risk Intelligence
+
 ![Risk Intelligence](screenshots/risk.png)
 
+The Risk Intelligence view highlights deals requiring management attention and provides risk reasons such as low closure probability, missing close dates and early sales stages.
+
 ### Data Quality
+
 ![Data Quality](screenshots/data-quality.png)
+
+The Data Quality view identifies missing business fields that may affect pipeline, financial and analytical accuracy.
+
+### AI Business Assistant
+
+![AI Business Assistant](screenshots/ai-assistant.png)
+
+The Skylark AI Assistant provides a conversational interface for querying verified business information through natural-language questions.
+
+### AI-Powered Pipeline Analysis
+
+![AI Pipeline Analysis](screenshots/ai-assistant-pipeline.png)
+
+The AI assistant can retrieve and explain pipeline information, including current pipeline value, weighted pipeline and sector-level distribution.
+
+### AI-Powered Risk Analysis
+
+![AI Risk Analysis](screenshots/ai-assistant-risk.png)
+
+The AI assistant can investigate deal risks and explain why specific opportunities require management attention using signals from the analytics layer.
 
 # 🛠️ Technology Stack
 
